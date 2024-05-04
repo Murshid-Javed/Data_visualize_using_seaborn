@@ -1,0 +1,215 @@
+# data visualization by using seaborn 
+
+import seaborn as sns 
+import matplotlib.pyplot as plt 
+import pandas as pd 
+import numpy as np
+df = pd.read_excel(r"C:\Users\Asif computer\Downloads\ESD.xlsx")
+df
+plt.figure(figsize = (10,5))
+color  = sns.color_palette("GnBu")
+sns.lineplot(data  = df,x = "Business Unit",y = "Age", hue =  "Ethnicity",palette = color)
+plt.grid(True)
+plt.show()
+
+"deep"
+"muted"
+"bright"
+"pastel"
+"dark"
+"colorblind"
+"hls"
+"husl"
+"viridis"
+"plasma"
+"inferno"
+"magma"
+"cividis"
+"twilight"
+"twilight_shifted"
+
+<h1 Bar plot in Seaborn </h1>
+
+# Bar plot in SeaBorn
+
+import seaborn as sns 
+import pandas as pd 
+import matplotlib.pyplot as plt 
+import numpy as np
+data = sns.load_dataset("tips")
+data
+color = sns.color_palette("husl")
+sns.barplot(data = data ,x = "day",y  = "total_bill",estimator = "sum",hue = "sex",palette = color,order = ["Sun","Fri","Sat","Thur"])#errorbar =("ci",0))
+plt.show()
+
+"""import seaborn as sns 
+import pandas as pd 
+import matplotlib.pyplot as plt 
+import numpy as np
+
+data = sns.load_dataset("tips")
+
+# Using the 'magma' colormap directly from Matplotlib
+color = plt.cm.magma(np.linspace(0, 1, 2))  # Generating a list of two colors from 'magma' colormap
+
+sns.barplot(data=data, x="day", y="total_bill", estimator="sum", hue="sex", palette=color)
+
+plt.show()
+"""
+
+# Histplot in saeborn 
+
+import seaborn as sns 
+import pandas as pd 
+import matplotlib.pyplot as plt 
+import numpy as np
+data = sns.load_dataset("tips")
+
+
+ax = sns.histplot(data=data, x="day", hue="sex", kde=True)
+plt.show()
+
+
+
+data
+
+import seaborn as sns 
+import pandas as pd 
+import matplotlib.pyplot as plt 
+import numpy as np
+data = sns.load_dataset("titanic")
+data
+color = sns.color_palette("dark")
+plt.figure(figsize=(13, 6))# color = sns.color_palette("husl")
+sns.histplot(data = data ,x ="age",palette = color,hue = "who",kde = True,discrete = True) # bins = 15
+plt.show()
+
+data
+
+# scatter plot in python
+
+import seaborn as sns 
+import pandas as pd 
+import matplotlib.pyplot as plt 
+import numpy as np
+data = sns.load_dataset("tips")
+print(data)
+color = sns.color_palette("muted")
+aab = sns.scatterplot(data  = data ,x = "total_bill",y  = "tip",palette =color,hue = "smoker",marker = "s",size = "size" )
+plt.legend(bbox_to_anchor = (0.2,0,1.1,1.2)) # x,y,width,height
+plt.show(aab)
+sns.scatterplot(data  = data ,x = "total_bill",y  = "tip",palette =color,hue = "day" )
+plr.show()
+
+import seaborn as sns 
+import pandas as pd 
+import matplotlib.pyplot as plt 
+import numpy as np
+data = np.random.randint(low = 1,high =100,size = (10,10))
+sns.heatmap(data = data,linewidths=1,linecolor='pink',annot = True,cmap = "GnBu" )
+
+import seaborn as sns 
+import pandas as pd 
+import matplotlib.pyplot as plt 
+import numpy as np 
+data = pd.read_excel(r"C:\Users\Asif computer\Downloads\ESD.xlsx")
+data
+color =sns.color_palette("viridis")
+sns.countplot(data = data,x = "Department",hue = "Gender",palette  = color)
+plt.xticks(rotation = 90)
+plt.show()
+
+# violin plot in seaborn
+
+import seaborn as sns 
+import pandas as pd 
+import matplotlib.pyplot as plt 
+import numpy as np
+data = sns.load_dataset("tips")
+print(data)
+sns.violinplot(data = data , x ="total_bill" )
+
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+data = sns.load_dataset("tips")
+data
+sns.pairplot(data = data,hue = "day",markers = "*")
+
+
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+data = sns.load_dataset("tips")
+data
+sns.stripplot(data = data,x = "day",y = "total_bill",hue = "sex",dodge = True,jitter = 0.5)
+
+sns.boxplot(data = data,x = "sex",y = "tip",orient = "vertical",color = "black",fliersize = 5)
+plt.show()
+sns.boxplot(data = data,x = "day",y = "tip",orient = "vertical")
+plt.show()
+
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+data = sns.load_dataset("tips")
+data
+sns.catplot(data = data ,x = "sex",y = "total_bill",kind = "boxen")
+
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+data = sns.load_dataset("exercise")
+data
+sns.set_style(style = "ticks")
+sns.barplot(data = data,x = "time",y = "pulse")
+
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+import numpy as np 
+import pandas as pd 
+sns.palplot(sns.color_palette("spring"))
+plt.show()
+sns.palplot(sns.color_palette())
+plt.show()
+
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+import numpy as np 
+import pandas as pd 
+data = sns.load_dataset("tips")
+a = sns.FacetGrid(data,col = "smoker",hue = "smoker")
+a.map(sns.barplot,"day","tip")
+plt.show()
+
+sns.relplot(data = data,x = "tip",y  = "total_bill",kind = "line",hue = "sex",markers = "*")
+plt.show()
+
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+import numpy as np 
+import pandas as pd 
+data = sns.load_dataset("tips")
+color = sns.color_palette("hls")
+sns.set_style("dark")
+sns.swarmplot(data = data ,x = "day",y = "total_bill",hue = "sex",palette = color,dodge = True)
+plt.show()
+
+import numpy as np 
+import pandas as pd 
+import matplotlib.pyplot as plt 
+data = sns.load_dataset("tips")
+color = sns.color_palette("hls")
+style = sns.set_style(style = "dark")
+plt.figure(figsize=(10,5))
+sns.kdeplot(data = data ,x = "total_bill",hue = "day",multiple = "stack" )
+plt.show()
+sns.kdeplot(data = data ,x = "total_bill",hue = "day",multiple = "fill" )
+plt.figure(figsize=(10, 5))
+plt.show()
+
+# Milte Hain Choote se Break K bdd
